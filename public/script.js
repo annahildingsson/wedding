@@ -44,3 +44,14 @@ buttons.forEach(btn => {
 
 // Ladda startsidan (information) direkt vid laddning
 loadPage('information.html');
+
+
+const formData = new FormData();
+formData.append('file', fileInput.files[0]);
+
+fetch('/upload', {
+  method: 'POST',
+  body: formData
+})
+  .then(response => response.text())
+  .then(data => alert('Uppladdning klar!'));

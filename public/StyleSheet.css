@@ -220,9 +220,64 @@ body {
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+/* === Gallery layout === */
+.form-container {
+    background-color: #fffaf6;
+    max-width: 500px;
+    margin: 2rem auto 4rem;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    font-family: "Julius Sans One", sans-serif;
+    color: #5f6b61;
+    text-align: center;
+}
+
+.form-container h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #5f6b61;
+}
+
+.form-container input[type="file"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 1.2rem;
+    border: 1.5px solid #7E8B7C;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #5f6b61;
+    background-color: #fffaf6;
+    transition: border-color 0.3s ease;
+}
+
+.form-container input[type="file"]:focus {
+    border-color: #5f6b61;
+    outline: none;
+    box-shadow: 0 0 6px #7E8B7C;
+}
+
+.form-container button {
+    width: 100%;
+    background-color: #7E8B7C;
+    border: none;
+    padding: 14px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #6d5d52;
+}
+
 
 /* === Bridalparty layout === */
-
 .bridalparty {
     max-width: 900px;
     margin: 3rem auto;

@@ -8,8 +8,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Darumadrop+One&family=Delius&family=Julius+Sans+One&family=Pacifico&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
 </head>
 <body>
-
- 
+  <div class="form-container">
+    <h2>Ladda upp en fil</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" required>
+      <button type="submit">Ladda upp</button>
+    </form>
+  </div>
 <script src="/script.js"></script>
 </body>
 </html>

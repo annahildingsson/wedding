@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/upload', express.static(path.join(__dirname, 'upload')));
 
 // === Multer: Bilduppladdning ===
 const storage = multer.diskStorage({
@@ -21,6 +21,47 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => cb(null, Date.now() + '-' + file.originalname)
 });
 const upload = multer({ storage });
+
+const sharp = require('sharp');
+
+app.post('/upload', upload.single('image'), async (req, res) => {
+  if (!req.file) return res.status(400).send({ message: 'Ingen fil mottagen' });
+
+  const filePath = req.file.path;
+  const ext = path.extname(req.file.originalname).toLowerCase();
+
+  try {
+    if (ext === '.heic') {
+      const outputPath = filePath.replace(/\.heic$/, '.jpg');
+
+      await sharp(filePath)
+        .jpeg()
+        .toFile(outputPath);
+
+      fs.unlinkSync(filePath); // ta bort original .heic
+
+      const filename = path.basename(outputPath);
+      return res.send({ message: 'HEIC konverterad och uppladdad som JPG!', file: filename });
+    } else {
+      return res.send({ message: 'Bild uppladdad!', file: req.file.filename });
+    }
+  } catch (err) {
+    console.error('Fel vid bilduppladdning:', err);
+    return res.status(500).send({ message: 'Kunde inte ladda upp bilden' });
+  }
+});
+
+async function convertHeicToJpg(inputPath, outputPath) {
+  const inputBuffer = fs.readFileSync(inputPath);
+
+  const outputBuffer = await heicConvert({
+    buffer: inputBuffer, // the HEIC file buffer
+    format: 'JPEG',      // output format
+    quality: 1           // the jpeg quality
+  });
+
+  fs.writeFileSync(outputPath, outputBuffer);
+}
 
 // === Google Sheets Setup ===
 let credentials;
@@ -114,7 +155,7 @@ app.get('/bridalparty', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get('/faq', (req, res) => {
+app.get('/gallery', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
