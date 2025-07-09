@@ -110,7 +110,7 @@ app.post('/rsvp/send', async (req, res) => {
 // === Routes ===
 app.get('/page/:name', (req, res) => {
   const pageName = req.params.name;
-  const filePath = path.join(__dirname, 'views', `${pageName}.html`);
+  const filePath = path.join(__dirname, 'public', `${pageName}.html`);
 
   fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
