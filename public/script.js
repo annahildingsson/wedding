@@ -53,7 +53,7 @@ uploadForm.addEventListener('submit', async function (e) {
 
   const formData = new FormData(uploadForm);
 
-  const response = await fetch('/uploads', {
+  const response = await fetch('/gallery', {
     method: 'POST',
     body: formData
   });

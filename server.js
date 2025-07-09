@@ -1,7 +1,6 @@
 const express = require('express');
 const multer = require('multer');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+
 const fs = require('fs');
 const path = require('path');
 const { google } = require('googleapis');
@@ -32,7 +31,7 @@ const storage = new CloudinaryStorage({
 const upload = multer({ storage });
 
 // === Bilduppladdning ===
-app.post('/uploads', upload.single('image'), async (req, res) => {
+app.post('/gallery', upload.single('image'), async (req, res) => {
   if (!req.file || !req.file.path) {
     return res.status(400).send({ message: 'Ingen fil mottagen' });
   }
@@ -43,18 +42,6 @@ app.post('/uploads', upload.single('image'), async (req, res) => {
     url: req.file.path // eller req.file.secure_url
   });
 });
-
-async function convertHeicToJpg(inputPath, outputPath) {
-  const inputBuffer = fs.readFileSync(inputPath);
-
-  const outputBuffer = await heicConvert({
-    buffer: inputBuffer, // the HEIC file buffer
-    format: 'JPEG',      // output format
-    quality: 1           // the jpeg quality
-  });
-
-  fs.writeFileSync(outputPath, outputBuffer);
-}
 
 // === Google Sheets Setup ===
 let credentials;
@@ -121,6 +108,19 @@ app.post('/rsvp/send', async (req, res) => {
 });
 
 // === Routes ===
+app.get('/page/:name', (req, res) => {
+  const pageName = req.params.name;
+  const filePath = path.join(__dirname, 'views', `${pageName}.html`);
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      res.status(404).send('Sidan finns inte');
+    } else {
+      res.type('html').send(data);
+    }
+  });
+});
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
