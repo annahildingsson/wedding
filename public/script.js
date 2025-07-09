@@ -31,41 +31,62 @@ buttons.forEach(btn => {
 // Ladda startsidan (information) direkt vid laddning
 loadPage('information.html');
 
-const uploadForm = document.getElementById('uploadForm');
-const gallery = document.getElementById('gallery');
 window.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('upload-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
+  console.log("script loaded");
+  loadGalleryImages();
+  const uploadForm = document.getElementById('upload-form');
+  const gallery = document.getElementById('gallery');
+  const uploadMessage = document.getElementById('upload-message');
 
-    const form = e.target;
-    const formData = new FormData(form);
-    const messageDiv = document.getElementById('upload-message');
+  if (uploadForm) {
+    uploadForm.addEventListener('submit', async function (e) {
+      e.preventDefault(); // ✅ Hindra sidladdning
 
-    try {
-      const response = await fetch('/gallery', {
-        method: 'POST',
-        body: formData,
-      });
+      const formData = new FormData(uploadForm);
 
-      const result = await response.json();
+      try {
+        const response = await fetch('/gallery', {
+          method: 'POST',
+          body: formData
+        });
 
-      if (response.ok) {
-        messageDiv.textContent = result.message;
+        const result = await response.json();
 
-        const img = document.createElement('img');
-        img.src = result.url;
-        img.alt = 'Uppladdad bild';
-        img.loading = 'lazy';
+        if (response.ok) {
+          uploadMessage.textContent = result.message;
 
-        document.getElementById('gallery').appendChild(img);
-        form.reset();
-        loadPage('gallery.html', true);
-      } else {
-        messageDiv.textContent = 'Fel: ' + (result.message || 'Något gick fel');
+          const img = document.createElement('img');
+          img.src = result.url;
+          img.alt = 'Uppladdad bild';
+          gallery.appendChild(img);
+
+          uploadForm.reset();
+        } else {
+          uploadMessage.textContent = 'Fel: ' + (result.message || 'Något gick fel');
+        }
+      } catch (error) {
+        console.error(error);
+        uploadMessage.textContent = 'Fel vid uppladdning';
       }
-    } catch (error) {
-      messageDiv.textContent = 'Fel vid uppladdning';
-      console.error(error);
-    }
-  });
+    });
+  }
 });
+
+async function loadGalleryImages() {
+  try {
+    const response = await fetch('/api/gallery');
+    const images = await response.json();
+
+    const gallery = document.getElementById('gallery');
+    gallery.innerHTML = ''; // Töm galleriet först
+
+    images.forEach(url => {
+      const img = document.createElement('img');
+      img.src = url;
+      img.alt = 'Uppladdad bild';
+      gallery.appendChild(img);
+    });
+  } catch (error) {
+    console.error('Kunde inte ladda bilder:', error);
+  }
+}

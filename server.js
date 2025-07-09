@@ -31,15 +31,28 @@ const storage = new CloudinaryStorage({
 const upload = multer({ storage });
 
 // === Bilduppladdning ===
-app.post('/gallery', upload.single('image'), (req, res) => {
+app.post('/gallery', upload.single('image'), async (req, res) => {
   if (!req.file || !req.file.path) {
     return res.status(400).json({ message: 'Ingen fil mottagen' });
   }
-  res.json({
-    message: 'Bild uppladdad!',
-    url: req.file.path // eller req.file.secure_url
-  });
+
+  try {
+    const imageUrl = req.file.path; // detta är Cloudinary URL
+    const filename = req.file.filename || 'okänt filnamn';
+
+    // Spara i Google Sheets
+    await appendImageToSheet(imageUrl, filename);
+
+    res.json({
+      message: 'Bild uppladdad och sparad!',
+      url: imageUrl
+    });
+  } catch (error) {
+    console.error('Fel vid sparande till Google Sheets:', error);
+    res.status(500).json({ message: 'Fel vid sparande i Google Sheets' });
+  }
 });
+
 
 // === Google Sheets Setup ===
 let credentials;
@@ -57,7 +70,21 @@ const auth = new google.auth.GoogleAuth({
 const sheets = google.sheets({ version: 'v4', auth });
 const SPREADSHEET_ID = '1Q4jz6KWrQ3mYS_XTq4wdTROKFM2vnQr63somTaR6VdA';// sheet id
 const SHEET_NAME = 'Gästlista'; // <-- Fliknamnet i Google Sheets
+const SHEET_NAME_GALLERY = 'WeddingGallery';
+async function appendImageToSheet(url, filename) {
+  const today = new Date().toLocaleDateString();
 
+  await sheets.spreadsheets.values.append({
+    spreadsheetId: SPREADSHEET_ID,
+    range: `${SHEET_NAME_GALLERY}!A:C`,
+    valueInputOption: 'USER_ENTERED',
+    resource: {
+      values: [[url, filename, today]],
+    },
+  });
+}
+
+module.exports = { appendImageToSheet };
 // === RSVP/OSA-endpoint ===
 app.post('/rsvp/send', async (req, res) => {
   const { namn, rsvp, specialkost } = req.body;
