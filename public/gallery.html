@@ -18,6 +18,64 @@
   <div id="upload-message"></div>
   <div id="gallery" class="gallery"></div>
   
-<script src="/script.js"></script>
+<script> 
+  loadGalleryImages();
+  const uploadForm = document.getElementById('upload-form');
+  const gallery = document.getElementById('gallery');
+  const uploadMessage = document.getElementById('upload-message');
+
+  if (uploadForm) {
+    uploadForm.addEventListener('submit', async function (e) {
+      e.preventDefault(); 
+      console.log("Form submitted");
+
+      const formData = new FormData(uploadForm);
+
+      try {
+        const response = await fetch('/gallery', {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          uploadMessage.textContent = result.message;
+
+          const img = document.createElement('img');
+          img.src = result.url;
+          img.alt = 'Uppladdad bild';
+          gallery.appendChild(img);
+
+          uploadForm.reset();
+        } else {
+          uploadMessage.textContent = 'Fel: ' + (result.message || 'Något gick fel');
+        }
+      } catch (error) {
+        console.error(error);
+        uploadMessage.textContent = 'Fel vid uppladdning';
+      }
+    });
+  }
+
+async function loadGalleryImages() {
+  try {
+    const response = await fetch('/api/gallery');
+    const images = await response.json();
+
+    const gallery = document.getElementById('gallery');
+    gallery.innerHTML = ''; // Töm galleriet först
+
+    images.forEach(url => {
+      const img = document.createElement('img');
+      img.src = url;
+      img.alt = 'Uppladdad bild';
+      gallery.appendChild(img);
+    });
+  } catch (error) {
+    console.error('Kunde inte ladda bilder:', error);
+  }
+}
+</script>
 </body>
 </html>
