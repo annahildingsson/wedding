@@ -33,39 +33,39 @@ loadPage('information.html');
 
 const uploadForm = document.getElementById('uploadForm');
 const gallery = document.getElementById('gallery');
+window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('upload-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
   
-document.getElementById('upload-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-
-  const form = e.target;
-  const formData = new FormData(form);
-
-  try {
-    const response = await fetch('/gallery', {
-      method: 'POST',
-      body: formData,
-    });
-
-    const result = await response.json();
-
-    if (response.ok) {
-      document.getElementById('upload-message').textContent = result.message;
-
-      // Lägg till bilden direkt i galleriet
-      const img = document.createElement('img');
-      img.src = result.url;  // Cloudinary URL
-      img.alt = 'Uppladdad bild';
-      img.style.maxWidth = '200px';
-      img.style.margin = '10px';
-
-      document.getElementById('gallery').appendChild(img);
-
-      form.reset(); // nollställ formuläret
-    } else {
-      document.getElementById('upload-message').textContent = 'Fel: ' + (result.message || 'Något gick fel');
+    try {
+      const response = await fetch('/gallery', {
+        method: 'POST',
+        body: formData,
+      });
+  
+      const result = await response.json();
+  
+      if (response.ok) {
+        document.getElementById('upload-message').textContent = result.message;
+  
+        // Lägg till bilden direkt i galleriet
+        const img = document.createElement('img');
+        img.src = result.url;  // Cloudinary URL
+        img.alt = 'Uppladdad bild';
+        img.style.maxWidth = '200px';
+        img.style.margin = '10px';
+  
+        document.getElementById('gallery').appendChild(img);
+  
+        form.reset(); // nollställ formuläret
+      } else {
+        document.getElementById('upload-message').textContent = 'Fel: ' + (result.message || 'Något gick fel');
+      }
+    } catch (error) {
+      document.getElementById('upload-message').textContent = 'Fel vid uppladdning';
+      console.error(error);
     }
-  } catch (error) {
-    document.getElementById('upload-message').textContent = 'Fel vid uppladdning';
-    console.error(error);
-  }
+  });  
 });
