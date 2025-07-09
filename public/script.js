@@ -34,24 +34,38 @@ loadPage('information.html');
 const uploadForm = document.getElementById('uploadForm');
 const gallery = document.getElementById('gallery');
   
-uploadForm.addEventListener('submit', async function (e) {
+document.getElementById('upload-form').addEventListener('submit', async function(e) {
   e.preventDefault();
 
-  const formData = new FormData(uploadForm);
+  const form = e.target;
+  const formData = new FormData(form);
 
-  const response = await fetch('/gallery', {
-    method: 'POST',
-    body: formData
-  });
+  try {
+    const response = await fetch('/gallery', {
+      method: 'POST',
+      body: formData,
+    });
 
-  const result = await response.json();
+    const result = await response.json();
 
-  if (response.ok) {
-    const img = document.createElement('img');
-    img.src = result.url;
-    img.alt = 'Uppladdad bild';
-    gallery.appendChild(img);
-  } else {
-    alert(result.message || 'Något gick fel vid uppladdning.');
+    if (response.ok) {
+      document.getElementById('upload-message').textContent = result.message;
+
+      // Lägg till bilden direkt i galleriet
+      const img = document.createElement('img');
+      img.src = result.url;  // Cloudinary URL
+      img.alt = 'Uppladdad bild';
+      img.style.maxWidth = '200px';
+      img.style.margin = '10px';
+
+      document.getElementById('gallery').appendChild(img);
+
+      form.reset(); // nollställ formuläret
+    } else {
+      document.getElementById('upload-message').textContent = 'Fel: ' + (result.message || 'Något gick fel');
+    }
+  } catch (error) {
+    document.getElementById('upload-message').textContent = 'Fel vid uppladdning';
+    console.error(error);
   }
 });

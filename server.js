@@ -31,13 +31,11 @@ const storage = new CloudinaryStorage({
 const upload = multer({ storage });
 
 // === Bilduppladdning ===
-app.post('/gallery', upload.single('image'), async (req, res) => {
+app.post('/gallery', upload.single('image'), (req, res) => {
   if (!req.file || !req.file.path) {
-    return res.status(400).send({ message: 'Ingen fil mottagen' });
+    return res.status(400).json({ message: 'Ingen fil mottagen' });
   }
-
-  // Cloudinary returnerar .path och .secure_url
-  return res.send({
+  res.json({
     message: 'Bild uppladdad!',
     url: req.file.path // eller req.file.secure_url
   });
