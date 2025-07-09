@@ -6,9 +6,10 @@ const fs = require('fs');
 const path = require('path');
 const { google } = require('googleapis');
 require('dotenv').config();
-app.use(express.static(path.join(__dirname, 'public')));
 
 const app = express();
+app.use(express.static(path.join(__dirname, 'public')));
+
 const PORT = process.env.PORT || 3000;
 const cloudinary = require('cloudinary').v2;
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
