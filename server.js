@@ -5,11 +5,11 @@ const fs = require('fs');
 const path = require('path');
 const { google } = require('googleapis');
 require('dotenv').config();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const PORT = process.env.PORT || 3000;
 const cloudinary = require('cloudinary').v2;
