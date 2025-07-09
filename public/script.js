@@ -40,7 +40,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   if (uploadForm) {
     uploadForm.addEventListener('submit', async function (e) {
-      e.preventDefault(); // ✅ Hindra sidladdning
+      e.preventDefault(); 
+      console.log("Form submitted");
 
       const formData = new FormData(uploadForm);
 

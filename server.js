@@ -73,7 +73,6 @@ const SHEET_NAME = 'Gästlista'; // <-- Fliknamnet i Google Sheets
 const SHEET_NAME_GALLERY = 'WeddingGallery';
 async function appendImageToSheet(url, filename) {
   const today = new Date().toLocaleDateString();
-
   await sheets.spreadsheets.values.append({
     spreadsheetId: SPREADSHEET_ID,
     range: `${SHEET_NAME_GALLERY}!A:C`,
