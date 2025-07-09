@@ -5,6 +5,8 @@ const fs = require('fs');
 const path = require('path');
 const { google } = require('googleapis');
 require('dotenv').config();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
@@ -22,11 +24,15 @@ cloudinary.config({
 
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
-  params: {
-    folder: 'wedding', // valfritt mappnamn i Cloudinary
-    allowed_formats: ['jpg', 'png', 'jpeg', 'heic', 'webp']
+  params: (req, file) => {
+    return {
+      folder: 'wedding',
+      allowed_formats: ['jpg', 'png', 'jpeg', 'heic', 'webp'],
+      public_id: `${Date.now()}-${file.originalname}`, // unikt filnamn
+    };
   },
 });
+
 
 const upload = multer({ storage });
 
@@ -35,7 +41,6 @@ app.post('/gallery', upload.single('image'), async (req, res) => {
   if (!req.file || !req.file.path) {
     return res.status(400).json({ message: 'Ingen fil mottagen' });
   }
-
   try {
     const imageUrl = req.file.path; // detta är Cloudinary URL
     const filename = req.file.filename || 'okänt filnamn';
