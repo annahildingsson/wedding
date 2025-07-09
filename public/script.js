@@ -59,6 +59,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('gallery').appendChild(img);
         form.reset();
+        loadPage('gallery.html', true);
       } else {
         messageDiv.textContent = 'Fel: ' + (result.message || 'Något gick fel');
       }
