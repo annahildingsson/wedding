@@ -36,36 +36,35 @@ const gallery = document.getElementById('gallery');
 window.addEventListener('DOMContentLoaded', () => {
   document.getElementById('upload-form').addEventListener('submit', async function(e) {
     e.preventDefault();
+
     const form = e.target;
     const formData = new FormData(form);
-  
+    const messageDiv = document.getElementById('upload-message');
+
     try {
       const response = await fetch('/gallery', {
         method: 'POST',
         body: formData,
       });
-  
+
       const result = await response.json();
-  
+
       if (response.ok) {
-        document.getElementById('upload-message').textContent = result.message;
-  
-        // Lägg till bilden direkt i galleriet
+        messageDiv.textContent = result.message;
+
         const img = document.createElement('img');
-        img.src = result.url;  // Cloudinary URL
+        img.src = result.url;
         img.alt = 'Uppladdad bild';
-        img.style.maxWidth = '200px';
-        img.style.margin = '10px';
-  
+        img.loading = 'lazy';
+
         document.getElementById('gallery').appendChild(img);
-  
-        form.reset(); // nollställ formuläret
+        form.reset();
       } else {
-        document.getElementById('upload-message').textContent = 'Fel: ' + (result.message || 'Något gick fel');
+        messageDiv.textContent = 'Fel: ' + (result.message || 'Något gick fel');
       }
     } catch (error) {
-      document.getElementById('upload-message').textContent = 'Fel vid uppladdning';
+      messageDiv.textContent = 'Fel vid uppladdning';
       console.error(error);
     }
-  });  
+  });
 });

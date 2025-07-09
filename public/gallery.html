@@ -8,13 +8,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Darumadrop+One&family=Delius&family=Julius+Sans+One&family=Pacifico&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
 </head>
 <body>
-  <form id="upload-form" action="/gallery" method="post" enctype="multipart/form-data">
+  <form id="upload-form" class="uploadForm" enctype="multipart/form-data">
+    <h2>Lägg till ett foto i galleriet</h2>
     <input type="file" name="image" />
     <button type="submit">Ladda upp</button>
+    <div id="upload-message" style="margin-top: 1rem;"></div>
   </form>
   
   <div id="upload-message"></div>
-  <div id="gallery" class="gallery-grid"></div>
+  <div id="gallery" class="gallery"></div>
   
 <script src="/script.js"></script>
 </body>
