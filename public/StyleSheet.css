@@ -221,7 +221,23 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 /* === Gallery layout === */
-.form-container {
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .gallery img {
+    width: 200px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    object-fit: cover;
+  }
+  
+.uploadForm {
     background-color: #fffaf6;
     max-width: 500px;
     margin: 2rem auto 4rem;
@@ -233,14 +249,14 @@ body {
     text-align: center;
 }
 
-.form-container h2 {
+.uploadForm h2 {
     font-family: 'Dancing Script', cursive;
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     color: #5f6b61;
 }
 
-.form-container input[type="file"] {
+.uploadForm input[type="file"] {
     width: 100%;
     padding: 10px 12px;
     margin-bottom: 1.2rem;
@@ -253,13 +269,13 @@ body {
     transition: border-color 0.3s ease;
 }
 
-.form-container input[type="file"]:focus {
+.uploadForm input[type="file"]:focus {
     border-color: #5f6b61;
     outline: none;
     box-shadow: 0 0 6px #7E8B7C;
 }
 
-.form-container button {
+.uploadForm button {
     width: 100%;
     background-color: #7E8B7C;
     border: none;
@@ -272,7 +288,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.form-container button:hover {
+.uploadForm button:hover {
     background-color: #6d5d52;
 }
 

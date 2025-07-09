@@ -45,13 +45,27 @@ buttons.forEach(btn => {
 // Ladda startsidan (information) direkt vid laddning
 loadPage('information.html');
 
+const uploadForm = document.getElementById('uploadForm');
+const gallery = document.getElementById('gallery');
+  
+uploadForm.addEventListener('submit', async function (e) {
+  e.preventDefault();
 
-const formData = new FormData();
-formData.append('file', fileInput.files[0]);
+  const formData = new FormData(uploadForm);
 
-fetch('/upload', {
-  method: 'POST',
-  body: formData
-})
-  .then(response => response.text())
-  .then(data => alert('Uppladdning klar!'));
+  const response = await fetch('/uploads', {
+    method: 'POST',
+    body: formData
+  });
+
+  const result = await response.json();
+
+  if (response.ok) {
+    const img = document.createElement('img');
+    img.src = result.url;
+    img.alt = 'Uppladdad bild';
+    gallery.appendChild(img);
+  } else {
+    alert(result.message || 'Något gick fel vid uppladdning.');
+  }
+});

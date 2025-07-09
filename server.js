@@ -5,50 +5,41 @@ const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 const { google } = require('googleapis');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
 
-// === Middleware ===
-app.use(cors());
-app.use(bodyParser.json());
-app.use(express.static('public'));
-app.use('/upload', express.static(path.join(__dirname, 'upload')));
-
-// === Multer: Bilduppladdning ===
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, 'uploads/'),
-  filename: (req, file, cb) => cb(null, Date.now() + '-' + file.originalname)
+// Cloudinary-konfiguration
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
 });
+
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'wedding', // valfritt mappnamn i Cloudinary
+    allowed_formats: ['jpg', 'png', 'jpeg', 'heic', 'webp']
+  },
+});
+
 const upload = multer({ storage });
 
-const sharp = require('sharp');
-
-app.post('/upload', upload.single('image'), async (req, res) => {
-  if (!req.file) return res.status(400).send({ message: 'Ingen fil mottagen' });
-
-  const filePath = req.file.path;
-  const ext = path.extname(req.file.originalname).toLowerCase();
-
-  try {
-    if (ext === '.heic') {
-      const outputPath = filePath.replace(/\.heic$/, '.jpg');
-
-      await sharp(filePath)
-        .jpeg()
-        .toFile(outputPath);
-
-      fs.unlinkSync(filePath); // ta bort original .heic
-
-      const filename = path.basename(outputPath);
-      return res.send({ message: 'HEIC konverterad och uppladdad som JPG!', file: filename });
-    } else {
-      return res.send({ message: 'Bild uppladdad!', file: req.file.filename });
-    }
-  } catch (err) {
-    console.error('Fel vid bilduppladdning:', err);
-    return res.status(500).send({ message: 'Kunde inte ladda upp bilden' });
+// === Bilduppladdning ===
+app.post('/uploads', upload.single('image'), async (req, res) => {
+  if (!req.file || !req.file.path) {
+    return res.status(400).send({ message: 'Ingen fil mottagen' });
   }
+
+  // Cloudinary returnerar .path och .secure_url
+  return res.send({
+    message: 'Bild uppladdad!',
+    url: req.file.path // eller req.file.secure_url
+  });
 });
 
 async function convertHeicToJpg(inputPath, outputPath) {
@@ -125,13 +116,6 @@ app.post('/rsvp/send', async (req, res) => {
     console.error('Fel vid Google Sheets:', error);
     res.status(500).send({ message: 'Kunde inte spara i Google Sheets' });
   }
-});
-
-
-// === Bilduppladdning ===
-app.post('/upload', upload.single('photo'), (req, res) => {
-  if (!req.file) return res.status(400).send({ message: 'Ingen fil mottagen' });
-  res.send({ message: 'Bild uppladdad!', file: req.file.filename });
 });
 
 // === Routes ===
