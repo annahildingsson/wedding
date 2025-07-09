@@ -6,6 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const { google } = require('googleapis');
 require('dotenv').config();
+app.use(express.static(path.join(__dirname, 'public')));
 
 const app = express();
 const PORT = process.env.PORT || 3000;
