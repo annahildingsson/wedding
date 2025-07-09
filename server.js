@@ -58,6 +58,21 @@ app.post('/gallery', upload.single('image'), async (req, res) => {
   }
 });
 
+app.get('/api/gallery', async (req, res) => {
+  try {
+    const response = await sheets.spreadsheets.values.get({
+      spreadsheetId: SPREADSHEET_ID,
+      range: `${SHEET_NAME_GALLERY}!A:A`, // Förutsätter att URL:er finns i kolumn A
+    });
+    const rows = response.data.values || [];
+    const urls = rows.map(row => row[0]); // första kolumn = URL
+    res.json(urls);
+  } catch (error) {
+    console.error('Fel vid hämtning av bilder:', error);
+    res.status(500).json({ message: 'Kunde inte hämta bilder' });
+  }
+});
+
 
 // === Google Sheets Setup ===
 let credentials;
