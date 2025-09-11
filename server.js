@@ -103,6 +103,7 @@ app.post('/api/rsvp', async (req, res) => {
             });
         }
         res.json({message: 'OSA sparad – tack!'});
+        showThankModal(result.message || 'OSA skickad!');
     } catch (err) {
         console.error(err);
         res.status(500).json({message: 'Kunde inte spara i Google Sheets'});

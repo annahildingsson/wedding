@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86e119a3-9f95-4477-a905-807d01815c4a" name="Changes" comment="" />
+    <list default="true" id="86e119a3-9f95-4477-a905-807d01815c4a" name="Changes" comment="">
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/StyleSheet.css" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/StyleSheet.css" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/gallery.html" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/gallery.html" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/rsvp.html" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/rsvp.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1757608628661</updated>
       <workItem from="1757608629850" duration="1545000" />
-      <workItem from="1757610312967" duration="4552000" />
+      <workItem from="1757610312967" duration="5876000" />
     </task>
     <servers />
   </component>
