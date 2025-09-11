@@ -9,6 +9,45 @@
           rel="stylesheet">
 </head>
 <body>
+<div class="header">
+    <h1>Anna & Joel</h1>
+    <p>1 Augusti 2026</p>
+    <div class="button-row">
+        <a href="/index.html" class="text-button">Information</a>
+        <a href="/ourStory.html" class="text-button">Vår story</a>
+        <a href="/gallery.html" class="text-button">Galleri</a>
+        <a href="/bridalparty.html" class="text-button">Brudfölje</a>
+        <a href="/rsvp.html" class="text-button">OSA</a>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="/bilder/3.jpg" alt="3"/>
+            <img src="/bilder/80.jpeg" alt="8"/>
+            <img src="/bilder/5.jpeg" alt="5"/>
+            <img src="/bilder/11.jpeg" alt="11"/>
+            <img src="/bilder/6.jpeg" alt="6"/>
+            <img src="/bilder/2.jpg" alt="2"/>
+            <img src="/bilder/7.jpeg" alt="7"/>
+            <img src="/bilder/9.jpeg" alt="9"/>
+            <img src="/bilder/10.jpeg" alt="10"/>
+            <img src="/bilder/12.jpg" alt="12"/>
+
+            <!-- Duplicerat innehåll för sömlös loop -->
+            <img src="/bilder/3.jpg" alt="3"/>
+            <img src="/bilder/80.jpeg" alt="8"/>
+            <img src="/bilder/5.jpeg" alt="5"/>
+            <img src="/bilder/11.jpeg" alt="11"/>
+            <img src="/bilder/6.jpeg" alt="6"/>
+            <img src="/bilder/2.jpg" alt="2"/>
+            <img src="/bilder/7.jpeg" alt="7"/>
+            <img src="/bilder/9.jpeg" alt="9"/>
+            <img src="/bilder/10.jpeg" alt="10"/>
+            <img src="/bilder/12.jpg" alt="12"/>
+        </div>
+    </div>
+</div>
+
 <form id="upload-form" class="uploadForm" enctype="multipart/form-data">
     <h2>Lägg till ett foto i galleriet</h2>
     <input type="file" name="image"/>
@@ -19,10 +58,34 @@
 <div id="gallery" class="gallery"></div>
 
 <script>
-    loadGalleryImages();
     const uploadForm = document.getElementById('upload-form');
     const gallery = document.getElementById('gallery');
     const uploadMessage = document.getElementById('upload-message');
+
+    async function loadGalleryImages() {
+        try {
+            const response = await fetch('/api/gallery');
+            const data = await response.json();
+
+            if (!Array.isArray(data)) {
+                console.error('Ingen bild-array:', data);
+                return;
+            }
+
+            const gallery = document.getElementById('gallery');
+            gallery.innerHTML = '';
+
+            data.forEach(url => {
+                const img = document.createElement('img');
+                img.src = url;
+                img.alt = 'Uppladdad bild';
+                gallery.appendChild(img);
+            });
+        } catch (error) {
+            console.error('Kunde inte ladda bilder:', error);
+        }
+    }
+
 
     if (uploadForm) {
         uploadForm.addEventListener('submit', async function (e) {
@@ -32,7 +95,7 @@
             const formData = new FormData(uploadForm);
 
             try {
-                const response = await fetch('/gallery', {
+                const response = await fetch('/api/gallery/upload', { // ✅ rätt endpoint
                     method: 'POST',
                     body: formData
                 });
@@ -58,24 +121,9 @@
         });
     }
 
-    async function loadGalleryImages() {
-        try {
-            const response = await fetch('/api/gallery');
-            const images = await response.json();
-
-            const gallery = document.getElementById('gallery');
-            gallery.innerHTML = ''; // Töm galleriet först
-
-            images.forEach(url => {
-                const img = document.createElement('img');
-                img.src = url;
-                img.alt = 'Uppladdad bild';
-                gallery.appendChild(img);
-            });
-        } catch (error) {
-            console.error('Kunde inte ladda bilder:', error);
-        }
-    }
+    // ✅ ladda bilder direkt vid start
+    loadGalleryImages();
 </script>
+
 </body>
 </html>

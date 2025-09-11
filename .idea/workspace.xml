@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="86e119a3-9f95-4477-a905-807d01815c4a" name="Changes" comment="">
+      <change afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/.package-lock.json" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/CHANGELOG.md" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/README-es.md" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/README-es.md" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/README.md" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/README.md" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/lib/main.js" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/lib/main.js" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/package.json" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/package.json" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/multer/lib/make-middleware.js" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/multer/lib/make-middleware.js" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/multer/package.json" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/multer/package.json" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/package-lock.json" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/package-lock.json" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/package.json" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/package.json" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/bridalparty.html" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/bridalparty.html" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/gallery.html" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/gallery.html" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/index.html" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/index.html" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/ourStory.html" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/ourStory.html" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/rsvp.html" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/rsvp.html" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/script.js" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/script.js" afterDir="false" />
+      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/server.js" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/server.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$/Bröllop/wedding-main/Namnlös" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;annagranberg&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/annagranberg/wedding.git&quot;,
+    &quot;accountId&quot;: &quot;9513d404-70c0-4b4c-931e-4156f6393768&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="32Ys1wu8X2nmj8c6JV8auRf89xw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "JavaScript Debug.gallery.html.executor": "Run",
+    "JavaScript Debug.index.html.executor": "Run",
+    "Node.js.server.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/annagranberg/Bröllop/wedding-main/Namnlös",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$USER_HOME$/Bröllop/wedding-main/Namnlös" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="86e119a3-9f95-4477-a905-807d01815c4a" name="Changes" comment="" />
+      <created>1757608628661</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757608628661</updated>
+      <workItem from="1757608629850" duration="1545000" />
+      <workItem from="1757610312967" duration="2889000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
