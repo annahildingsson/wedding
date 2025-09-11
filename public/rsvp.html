@@ -85,7 +85,7 @@
             specialkost: form.kommentar.value
         };
 
-        fetch('/rsvp/send', {
+        fetch('/api/rsvp', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data)
