@@ -21,11 +21,11 @@ const container = document.getElementById('content-container');
 
 // Lyssna på klick på knapparna
 buttons.forEach(btn => {
-  btn.addEventListener('click', e => {
-    e.preventDefault(); // Hindra att sidan laddas om
-    const page = btn.getAttribute('data-page');
-    loadPage(page);
-  });
+    btn.addEventListener('click', e => {
+        e.preventDefault(); // Hindra att sidan laddas om
+        const page = btn.getAttribute('data-page');
+        loadPage(page);
+    });
 });
 
 // Ladda startsidan (information) direkt vid laddning

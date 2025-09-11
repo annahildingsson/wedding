@@ -5,62 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anna & Joels bröllop</title>
     <link rel="stylesheet" href="/StyleSheet.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Darumadrop+One&family=Delius&family=Julius+Sans+One&family=Pacifico&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Darumadrop+One&family=Delius&family=Julius+Sans+One&family=Pacifico&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+          rel="stylesheet">
 </head>
 <body>
-   
-  
-  <div class="rsvp">
+
+
+<div class="rsvp">
     <h2>Svara på din inbjudan!</h2>
     <p>Är ni flera i familjen eller sällskapet, fyll i en OSA per inbjudan för att hjälpa oss med planeringen.</p>
     <p>Om du har några allergier, vänligen skriv det i kommentarsfältet.</p>
     <form id="osa-form">
-      <label for="namn">Fullständigt namn:</label>
-      <input type="text" id="namn" name="namn" required>
-  
-      <label for="status">Status:</label>
-      <select id="status" name="status" required>
-        <option value="" disabled selected>Välj ett alternativ</option>
-        <option value="Kommer">Kommer</option>
-        <option value="Kommer inte">Kommer inte</option>
-      </select>
-  
-      <label for="kommentar">Kommentar:</label>
-      <textarea id="kommentar" name="kommentar"></textarea>
-  
-      <button type="submit">Skicka OSA</button>
+        <label for="namn">Fullständigt namn:</label>
+        <input type="text" id="namn" name="namn" required>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="" disabled selected>Välj ett alternativ</option>
+            <option value="Kommer">Kommer</option>
+            <option value="Kommer inte">Kommer inte</option>
+        </select>
+
+        <label for="kommentar">Kommentar:</label>
+        <textarea id="kommentar" name="kommentar"></textarea>
+
+        <button type="submit">Skicka OSA</button>
     </form>
     <div id="osa-message"></div>
-  </div>
-  
-    <script>
-      const form = document.getElementById('osa-form');
-      const messageDiv = document.getElementById('osa-message');
-  
-      form.addEventListener('submit', function(event) {
+</div>
+
+<script>
+    const form = document.getElementById('osa-form');
+    const messageDiv = document.getElementById('osa-message');
+
+    form.addEventListener('submit', function (event) {
         event.preventDefault();
-  
+
         const data = {
-          namn: form.namn.value,
-          rsvp: form.status.value,    
-          specialkost: form.kommentar.value  
-          };
-  
+            namn: form.namn.value,
+            rsvp: form.status.value,
+            specialkost: form.kommentar.value
+        };
+
         fetch('/rsvp/send', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
         })
-        .then(response => response.json())
-        .then(result => {
-          messageDiv.textContent = result.message || 'OSA skickad!';
-          form.reset();
-        })
-        .catch(error => {
-          messageDiv.textContent = 'Något gick fel, försök igen.';
-          console.error('Error:', error);
-        });
-      });
-    </script>
-  </body>
+            .then(response => response.json())
+            .then(result => {
+                messageDiv.textContent = result.message || 'OSA skickad!';
+                form.reset();
+            })
+            .catch(error => {
+                messageDiv.textContent = 'Något gick fel, försök igen.';
+                console.error('Error:', error);
+            });
+    });
+</script>
+</body>
 </html>  
