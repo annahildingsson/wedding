@@ -81,9 +81,32 @@
 </div>
 
 <script>
-    const form = document.getElementById('osa-form');
-    const messageDiv = document.getElementById('osa-message');
+    const modal = document.getElementById('thankModal');
+    const closeBtn = document.getElementById('closeModal');
 
+    function showThankModal(message) {
+        // Om du vill kan du ändra meddelandet dynamiskt:
+        const p = modal.querySelector('p');
+        p.textContent = message || 'Tack! Din OSA har skickats.';
+
+        modal.style.display = 'block';
+    }
+
+    function closeThankModal() {
+        modal.style.display = 'none';
+    }
+
+    // Stäng modalen när man klickar på krysset
+    closeBtn.onclick = closeThankModal;
+
+    // Stäng modalen om man klickar utanför innehållet
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeThankModal();
+        }
+    }
+
+    const form = document.getElementById('osa-form');
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
@@ -100,15 +123,15 @@
         })
             .then(response => response.json())
             .then(result => {
-                showThankModal(result.message); // här ska det köras i webbläsaren
+                showThankModal(result.message);
                 form.reset();
             })
             .catch(error => {
                 showThankModal('Något gick fel, försök igen.');
                 console.error(error);
             });
-
     });
 </script>
+
 </body>
 </html>  
