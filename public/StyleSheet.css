@@ -7,7 +7,7 @@
 
 body {
     font-family: "Julius Sans One", sans-serif;
-    background-color:#E6E3DB;
+    background-color: #E6E3DB;
     color: #FFFFFF;
     line-height: 1.6;
 }
@@ -22,7 +22,7 @@ body {
 .header h1 {
     font-family: 'Dancing Script', cursive;
     font-size: 81px;
-    color: #5f6b61	;
+    color: #5f6b61;
     margin-bottom: 10px;
 }
 
@@ -30,6 +30,7 @@ body {
     font-size: 16px;
     color: #7E8B7C;
 }
+
 .slideshow-container {
     position: relative;
     width: 100%;
@@ -50,12 +51,12 @@ body {
 
 @keyframes scroll-left {
     0% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
     100% {
-      transform: translateX(-50%);
+        transform: translateX(-50%);
     }
-  }  
+}
 
 /* === Navigering === */
 .button-row {
@@ -84,11 +85,11 @@ body {
 }
 
 .text-button.active {
-    background: #5f6b61; 
-    color: #fff;           
+    background: #5f6b61;
+    color: #fff;
     border-radius: 4px;
     padding: 12px 24px;
-  }
+}
 
 /* === Sektioner === */
 .information {
@@ -140,6 +141,7 @@ body {
 .image-map-hover:hover .map-overlay {
     display: block;
 }
+
 /* Bild och text till vänster/höger */
 .information-text,
 .map {
@@ -203,11 +205,13 @@ body {
     margin: 3rem auto;
     padding: 0 1rem;
 }
+
 .ourStory h2 {
     font-family: 'Dancing Script', cursive;
     color: #5f6b61;
     font-size: 35px;
 }
+
 .ourStory p {
     font-family: "Julius Sans One", sans-serif;
     color: black
@@ -220,6 +224,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+
 /* === Gallery layout === */
 .gallery {
     display: flex;
@@ -227,23 +232,24 @@ body {
     gap: 1rem;
     justify-content: center;
     margin-top: 2rem;
-  }
-  
-  .gallery img {
-    width: 200px;
+}
+
+.gallery img {
+    width: 300px;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     object-fit: cover;
-  }
-  
+    margin: 1rem;
+}
+
 .uploadForm {
     background-color: #fffaf6;
     max-width: 500px;
     margin: 2rem auto 4rem;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
     font-family: "Julius Sans One", sans-serif;
     color: #5f6b61;
     text-align: center;
@@ -339,6 +345,7 @@ body {
     font-size: 1rem;
     color: #444;
 }
+
 /* === Rsvp layout === */
 
 /* === RSVP Formulär === */
@@ -349,7 +356,7 @@ body {
     margin: 2rem auto 4rem;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
     font-family: "Julius Sans One", sans-serif;
     color: #5f6b61;
 }
@@ -361,9 +368,11 @@ body {
     text-align: center;
     color: #5f6b61;
 }
+
 .rsvp p {
     margin-bottom: 1.5rem;
 }
+
 .rsvp label {
     display: block;
     margin-bottom: 0.5rem;
@@ -410,7 +419,7 @@ body {
     color: #5f6b61;
     background-color: #fffaf6;
     transition: border-color 0.3s ease;
-    -webkit-appearance: none;  /* ta bort default pilar i vissa webbläsare */
+    -webkit-appearance: none; /* ta bort default pilar i vissa webbläsare */
     -moz-appearance: none;
     appearance: none;
     cursor: pointer;
@@ -530,12 +539,14 @@ body {
     }
 
 }
+
 @media (max-width: 768px) {
     .slideshow-container {
-        height: 300px; 
+        height: 300px;
     }
+
     .mySlides img {
-        height: 300px; 
+        height: 300px;
     }
 }
 
@@ -543,8 +554,9 @@ body {
     .slideshow-container {
         height: 150px;
     }
+
     .mySlides img {
-        height: 150px; 
+        height: 150px;
     }
 }
 
