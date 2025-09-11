@@ -100,13 +100,14 @@
         })
             .then(response => response.json())
             .then(result => {
-                messageDiv.textContent = result.message || 'OSA skickad!';
+                showThankModal(result.message); // här ska det köras i webbläsaren
                 form.reset();
             })
             .catch(error => {
-                messageDiv.textContent = 'Något gick fel, försök igen.';
-                console.error('Error:', error);
+                showThankModal('Något gick fel, försök igen.');
+                console.error(error);
             });
+
     });
 </script>
 </body>
