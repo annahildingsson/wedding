@@ -35,8 +35,7 @@ const auth = new google.auth.GoogleAuth({
     scopes: ['https://www.googleapis.com/auth/spreadsheets']
 });
 const sheets = google.sheets({version: 'v4', auth});
-const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
-const SHEET_NAME_GALLERY = 'WeddingGallery';
+const SPREADSHEET_ID = '1Q4jz6KWrQ3mYS_XTq4wdTROKFM2vnQr63somTaR6VdA';
 const SHEET_NAME_RSVP = 'Gästlista';
 
 // === Routes ===
