@@ -29,14 +29,13 @@ const storage = new CloudinaryStorage({
 const upload = multer({storage});
 
 // Google Sheets setup
-const credentials = JSON.parse(fs.readFileSync("credentials.json"));
+const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS);
 const auth = new google.auth.GoogleAuth({
     credentials,
     scopes: ['https://www.googleapis.com/auth/spreadsheets']
 });
 const sheets = google.sheets({version: 'v4', auth});
 const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
-const SHEET_NAME_GALLERY = 'WeddingGallery';
 const SHEET_NAME_RSVP = 'Gästlista';
 
 // === Routes ===

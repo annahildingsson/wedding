@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86e119a3-9f95-4477-a905-807d01815c4a" name="Changes" comment="">
-      <change afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/.package-lock.json" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/CHANGELOG.md" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/README-es.md" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/README-es.md" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/README.md" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/README.md" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/lib/main.js" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/lib/main.js" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/package.json" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/dotenv/package.json" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/multer/lib/make-middleware.js" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/multer/lib/make-middleware.js" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/multer/package.json" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/node_modules/multer/package.json" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/package-lock.json" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/package-lock.json" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/package.json" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/package.json" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/bridalparty.html" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/bridalparty.html" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/gallery.html" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/gallery.html" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/index.html" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/index.html" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/ourStory.html" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/ourStory.html" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/rsvp.html" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/rsvp.html" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/script.js" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/public/script.js" afterDir="false" />
-      <change beforePath="$USER_HOME$/Bröllop/wedding-main/Namnlös/server.js" beforeDir="false" afterPath="$USER_HOME$/Bröllop/wedding-main/Namnlös/server.js" afterDir="false" />
-    </list>
+    <list default="true" id="86e119a3-9f95-4477-a905-807d01815c4a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1757608628661</updated>
       <workItem from="1757608629850" duration="1545000" />
-      <workItem from="1757610312967" duration="2889000" />
+      <workItem from="1757610312967" duration="3207000" />
     </task>
     <servers />
   </component>
