@@ -31,6 +31,12 @@ body {
   color: #7e8b7c;
 }
 
+.header-picture {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
 .slideshow-container {
   position: relative;
   width: 100%;
