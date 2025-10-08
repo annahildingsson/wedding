@@ -31,7 +31,7 @@ body {
   color: #7e8b7c;
 }
 
-.header-picture {
+.header-picture img{
   position: relative;
   width: 100%;
   height: 400px;
