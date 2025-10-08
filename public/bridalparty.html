@@ -1,108 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anna & Joels bröllop</title>
-    <link rel="stylesheet" href="/StyleSheet.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Darumadrop+One&family=Delius&family=Julius+Sans+One&family=Pacifico&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
-          rel="stylesheet">
-</head>
-<body>
-<div class="header">
-    <h1>Anna & Joel</h1>
-    <p>1 Augusti 2026</p>
-    <div class="button-row">
+    <link rel="stylesheet" href="/StyleSheet.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Darumadrop+One&family=Delius&family=Julius+Sans+One&family=Pacifico&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Anna & Joel</h1>
+      <p>1 Augusti 2026</p>
+      <div class="button-row">
         <a href="/index.html" class="text-button">Information</a>
         <a href="/ourStory.html" class="text-button">Vår story</a>
         <a href="/gallery.html" class="text-button">Galleri</a>
         <a href="/bridalparty.html" class="text-button">Brudfölje</a>
         <a href="/rsvp.html" class="text-button">OSA</a>
-    </div>
+      </div>
 
-    <div class="slideshow-container">
+      <div class="slideshow-container">
         <div class="mySlides">
-            <img src="/bilder/3.jpg" alt="3"/>
-            <img src="/bilder/80.jpeg" alt="8"/>
-            <img src="/bilder/5.jpeg" alt="5"/>
-            <img src="/bilder/11.jpeg" alt="11"/>
-            <img src="/bilder/6.jpeg" alt="6"/>
-            <img src="/bilder/2.jpg" alt="2"/>
-            <img src="/bilder/7.jpeg" alt="7"/>
-            <img src="/bilder/9.jpeg" alt="9"/>
-            <img src="/bilder/10.jpeg" alt="10"/>
-            <img src="/bilder/12.jpg" alt="12"/>
+          <img src="/bilder/3.jpg" alt="3" />
+          <img src="/bilder/80.jpeg" alt="8" />
+          <img src="/bilder/5.jpeg" alt="5" />
+          <img src="/bilder/11.jpeg" alt="11" />
+          <img src="/bilder/6.jpeg" alt="6" />
+          <img src="/bilder/2.jpg" alt="2" />
+          <img src="/bilder/7.jpeg" alt="7" />
+          <img src="/bilder/9.jpeg" alt="9" />
+          <img src="/bilder/10.jpeg" alt="10" />
+          <img src="/bilder/12.jpg" alt="12" />
 
-            <!-- Duplicerat innehåll för sömlös loop -->
-            <img src="/bilder/3.jpg" alt="3"/>
-            <img src="/bilder/80.jpeg" alt="8"/>
-            <img src="/bilder/5.jpeg" alt="5"/>
-            <img src="/bilder/11.jpeg" alt="11"/>
-            <img src="/bilder/6.jpeg" alt="6"/>
-            <img src="/bilder/2.jpg" alt="2"/>
-            <img src="/bilder/7.jpeg" alt="7"/>
-            <img src="/bilder/9.jpeg" alt="9"/>
-            <img src="/bilder/10.jpeg" alt="10"/>
-            <img src="/bilder/12.jpg" alt="12"/>
+          <!-- Duplicerat innehåll för sömlös loop -->
+          <img src="/bilder/3.jpg" alt="3" />
+          <img src="/bilder/80.jpeg" alt="8" />
+          <img src="/bilder/5.jpeg" alt="5" />
+          <img src="/bilder/11.jpeg" alt="11" />
+          <img src="/bilder/6.jpeg" alt="6" />
+          <img src="/bilder/2.jpg" alt="2" />
+          <img src="/bilder/7.jpeg" alt="7" />
+          <img src="/bilder/9.jpeg" alt="9" />
+          <img src="/bilder/10.jpeg" alt="10" />
+          <img src="/bilder/12.jpg" alt="12" />
         </div>
+      </div>
     </div>
-</div>
 
-
-</div>
-<script>
-    fetch('header.html')
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('header-placeholder').innerHTML = html;
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById("header-placeholder").innerHTML = html;
         });
-</script>
+    </script>
 
-<div class="bridalparty">
-    <h1>Brudtärnor</h1>
-    <div class="brudtärnor">
+    <div class="bridalparty">
+      <h1>Brudtärnor</h1>
+      <div class="brudtärnor">
         <div class="person">
-            <h2>Nicole</h2>
-            <img src="/bilder/Nicole.jpg" alt="Nicole" class="photo">
-            <p>Nicole är Annas bästa vän</p>
+          <h2>Nicole</h2>
+          <img src="/bilder/Nicole.jpg" alt="Nicole" class="photo" />
+          <p>Nicole är Annas bästa vän</p>
         </div>
         <div class="person">
-            <h2>Milla</h2>
-            <img src="/bilder/Milla.jpg" alt="Milla" class="photo">
-            <p>Milla och Anna lärde känna varandra under högstadiet. </p>
+          <h2>Milla</h2>
+          <img src="/bilder/Milla.jpg" alt="Milla" class="photo" />
+          <p>Milla och Anna lärde känna varandra under högstadiet.</p>
         </div>
+      </div>
+      <h1>Brudgummar</h1>
+      <div class="brudgummar">
+        <div class="person">
+          <h2>Hugo</h2>
+          <img src="/bilder/Hugo.jpg" alt="Hugo" class="photo" />
+          <p>Hugo och Joel har varit vänner sen barndomen...</p>
+        </div>
+        <div class="person">
+          <h2>Benedict</h2>
+          <img src="/bilder/Benedict.jpg" alt="Benedict" class="photo" />
+          <p>Benedict är Joels bästa vän...</p>
+        </div>
+      </div>
+      <h1>Kvällens toastmadammes</h1>
+      <div class="värdpar">
+        <div class="person">
+          <h2>?</h2>
+          <img src="/bilder/Linn.jpg" alt="Linn" class="photo" />
+
+          <p>? är väldigt rolig</p>
+        </div>
+        <div class="person">
+          <h2>?</h2>
+          <img src="/bilder/Nicole.jpg" alt="Nicole" class="photo" />
+          <p>? är också väldigt rolig</p>
+        </div>
+      </div>
     </div>
-    <h1>Brudgummar</h1>
-    <div class="brudgummar">
-        <div class="person">
-            <h2>Hugo</h2>
-            <img src="/bilder/Hugo.jpg" alt="Hugo" class="photo">
-            <p>Hugo och Joel har varit vänner sen barndomen...</p>
-        </div>
-        <div class="person">
-            <h2>Benedict</h2>
-            <img src="/bilder/Benedict.jpg" alt="Benedict" class="photo">
-            <p>Benedict är Joels bästa vän...</p>
-        </div>
-    </div>
-    <h1>Kvällens toastmadammes</h1>
-    <div class="värdpar">
-        <div class="person">
-            <h2>?</h2>
-            <img src="/bilder/Linn.jpg" alt="Linn" class="photo">
 
-            <p>? är väldigt rolig</p>
-        </div>
-        <div class="person">
-            <h2>?</h2>
-            <img src="/bilder/Nicole.jpg" alt="Nicole" class="photo">
-            <p>? är också väldigt rolig</p>
-        </div>
-
-    </div>
-</div>
-
-
-<script src="/script.js"></script>
-</body>
+    <script src="/script.js"></script>
+  </body>
 </html>

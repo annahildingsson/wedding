@@ -1,133 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anna & Joels bröllop</title>
-    <link rel="stylesheet" href="/StyleSheet.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Darumadrop+One&family=Delius&family=Julius+Sans+One&family=Pacifico&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
-          rel="stylesheet">
-</head>
-<body>
-<div class="header">
-    <h1>Anna & Joel</h1>
-    <p>1 Augusti 2026</p>
-    <div class="button-row">
+    <link rel="stylesheet" href="/StyleSheet.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Darumadrop+One&family=Delius&family=Julius+Sans+One&family=Pacifico&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Anna & Joel</h1>
+      <p>1 Augusti 2026</p>
+      <div class="button-row">
         <a href="/index.html" class="text-button">Information</a>
         <a href="/ourStory.html" class="text-button">Vår story</a>
         <a href="/gallery.html" class="text-button">Galleri</a>
         <a href="/bridalparty.html" class="text-button">Brudfölje</a>
         <a href="/rsvp.html" class="text-button">OSA</a>
-    </div>
+      </div>
 
-    <div class="slideshow-container">
+      <div class="slideshow-container">
         <div class="mySlides">
-            <img src="/bilder/3.jpg" alt="3"/>
-            <img src="/bilder/80.jpeg" alt="8"/>
-            <img src="/bilder/5.jpeg" alt="5"/>
-            <img src="/bilder/11.jpeg" alt="11"/>
-            <img src="/bilder/6.jpeg" alt="6"/>
-            <img src="/bilder/2.jpg" alt="2"/>
-            <img src="/bilder/7.jpeg" alt="7"/>
-            <img src="/bilder/9.jpeg" alt="9"/>
-            <img src="/bilder/10.jpeg" alt="10"/>
-            <img src="/bilder/12.jpg" alt="12"/>
+          <img src="/bilder/3.jpg" alt="3" />
+          <img src="/bilder/80.jpeg" alt="8" />
+          <img src="/bilder/5.jpeg" alt="5" />
+          <img src="/bilder/11.jpeg" alt="11" />
+          <img src="/bilder/6.jpeg" alt="6" />
+          <img src="/bilder/2.jpg" alt="2" />
+          <img src="/bilder/7.jpeg" alt="7" />
+          <img src="/bilder/9.jpeg" alt="9" />
+          <img src="/bilder/10.jpeg" alt="10" />
+          <img src="/bilder/12.jpg" alt="12" />
 
-            <!-- Duplicerat innehåll för sömlös loop -->
-            <img src="/bilder/3.jpg" alt="3"/>
-            <img src="/bilder/80.jpeg" alt="8"/>
-            <img src="/bilder/5.jpeg" alt="5"/>
-            <img src="/bilder/11.jpeg" alt="11"/>
-            <img src="/bilder/6.jpeg" alt="6"/>
-            <img src="/bilder/2.jpg" alt="2"/>
-            <img src="/bilder/7.jpeg" alt="7"/>
-            <img src="/bilder/9.jpeg" alt="9"/>
-            <img src="/bilder/10.jpeg" alt="10"/>
-            <img src="/bilder/12.jpg" alt="12"/>
+          <!-- Duplicerat innehåll för sömlös loop -->
+          <img src="/bilder/3.jpg" alt="3" />
+          <img src="/bilder/80.jpeg" alt="8" />
+          <img src="/bilder/5.jpeg" alt="5" />
+          <img src="/bilder/11.jpeg" alt="11" />
+          <img src="/bilder/6.jpeg" alt="6" />
+          <img src="/bilder/2.jpg" alt="2" />
+          <img src="/bilder/7.jpeg" alt="7" />
+          <img src="/bilder/9.jpeg" alt="9" />
+          <img src="/bilder/10.jpeg" alt="10" />
+          <img src="/bilder/12.jpg" alt="12" />
         </div>
+      </div>
     </div>
-</div>
 
-<form id="upload-form" class="uploadForm" enctype="multipart/form-data">
-    <h2>Lägg till ett foto i galleriet</h2>
-    <p>
-        Dela minnen från vår stora dag! Här kan du se och lägga till bilder relaterade till bröllopet,
-        så att alla våra gäster kan ta del av stunderna tillsammans med oss
-    </p>
-    <input type="file" name="image"/>
-    <button type="submit">Ladda upp</button>
-</form>
+    <form id="upload-form" class="uploadForm" enctype="multipart/form-data">
+      <h2>Lägg till ett foto i galleriet</h2>
+      <p>
+        Dela minnen från vår stora dag! Här kan du se och lägga till bilder
+        relaterade till bröllopet, så att alla våra gäster kan ta del av
+        stunderna tillsammans med oss
+      </p>
+      <input type="file" name="image" />
+      <button type="submit">Ladda upp</button>
+    </form>
 
-<div id="upload-message" style="margin-top: 1rem;"></div>
-<div id="gallery" class="gallery"></div>
+    <div id="upload-message" style="margin-top: 1rem"></div>
+    <div id="gallery" class="gallery"></div>
 
-<script>
-    const uploadForm = document.getElementById('upload-form');
-    const gallery = document.getElementById('gallery');
-    const uploadMessage = document.getElementById('upload-message');
+    <script>
+      const uploadForm = document.getElementById("upload-form");
+      const gallery = document.getElementById("gallery");
+      const uploadMessage = document.getElementById("upload-message");
 
-    async function loadGalleryImages() {
+      async function loadGalleryImages() {
         try {
-            const response = await fetch('/api/gallery');
-            const data = await response.json();
+          const response = await fetch("/api/gallery");
+          const data = await response.json();
 
-            if (!Array.isArray(data)) {
-                console.error('Ingen bild-array:', data);
-                return;
-            }
+          if (!Array.isArray(data)) {
+            console.error("Ingen bild-array:", data);
+            return;
+          }
 
-            const gallery = document.getElementById('gallery');
-            gallery.innerHTML = '';
+          const gallery = document.getElementById("gallery");
+          gallery.innerHTML = "";
 
-            data.forEach(url => {
-                const img = document.createElement('img');
-                img.src = url;
-                img.alt = 'Uppladdad bild';
-                gallery.appendChild(img);
-            });
+          data.forEach((url) => {
+            const img = document.createElement("img");
+            img.src = url;
+            img.alt = "Uppladdad bild";
+            gallery.appendChild(img);
+          });
         } catch (error) {
-            console.error('Kunde inte ladda bilder:', error);
+          console.error("Kunde inte ladda bilder:", error);
         }
-    }
+      }
 
+      if (uploadForm) {
+        uploadForm.addEventListener("submit", async function (e) {
+          e.preventDefault();
+          console.log("Form submitted");
 
-    if (uploadForm) {
-        uploadForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
-            console.log("Form submitted");
+          const formData = new FormData(uploadForm);
 
-            const formData = new FormData(uploadForm);
+          try {
+            const response = await fetch("/api/gallery/upload", {
+              // ✅ rätt endpoint
+              method: "POST",
+              body: formData,
+            });
 
-            try {
-                const response = await fetch('/api/gallery/upload', { // ✅ rätt endpoint
-                    method: 'POST',
-                    body: formData
-                });
+            const result = await response.json();
 
-                const result = await response.json();
+            if (response.ok) {
+              uploadMessage.textContent = result.message;
 
-                if (response.ok) {
-                    uploadMessage.textContent = result.message;
+              const img = document.createElement("img");
+              img.src = result.url;
+              img.alt = "Uppladdad bild";
+              gallery.appendChild(img);
 
-                    const img = document.createElement('img');
-                    img.src = result.url;
-                    img.alt = 'Uppladdad bild';
-                    gallery.appendChild(img);
-
-                    uploadForm.reset();
-                } else {
-                    uploadMessage.textContent = 'Fel: ' + (result.message || 'Något gick fel');
-                }
-            } catch (error) {
-                console.error(error);
-                uploadMessage.textContent = 'Fel vid uppladdning';
+              uploadForm.reset();
+            } else {
+              uploadMessage.textContent =
+                "Fel: " + (result.message || "Något gick fel");
             }
+          } catch (error) {
+            console.error(error);
+            uploadMessage.textContent = "Fel vid uppladdning";
+          }
         });
-    }
+      }
 
-    // ✅ ladda bilder direkt vid start
-    loadGalleryImages();
-</script>
-
-</body>
+      // ✅ ladda bilder direkt vid start
+      loadGalleryImages();
+    </script>
+  </body>
 </html>
