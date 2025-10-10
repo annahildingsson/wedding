@@ -39,33 +39,6 @@ body {
   object-position: center;
 }
 
-.slideshow-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  height: 400px;
-}
-
-.mySlides {
-  display: flex;
-  animation: scroll-left 60s linear infinite;
-  width: max-content;
-}
-
-.mySlides img {
-  height: 400px;
-  flex-shrink: 0;
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 /* === Navigering === */
 .button-row {
   display: flex;
