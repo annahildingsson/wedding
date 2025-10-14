@@ -1,12 +1,11 @@
-import dotenv from 'dotenv';
-dotenv.config();
-const express = require("express");
-const multer = require("multer");
-const path = require("path");
-const fs = require("fs");
-const { google } = require("googleapis");
-const cloudinary = require("cloudinary").v2;
-const { CloudinaryStorage } = require("multer-storage-cloudinary");
+require('dotenv').config();
+const express = require('express');
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
+const {google} = require('googleapis');
+const cloudinary = require('cloudinary').v2;
+const {CloudinaryStorage} = require('multer-storage-cloudinary');
 
 const app = express();
 app.use(express.json());
