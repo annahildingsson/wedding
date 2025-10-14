@@ -15,7 +15,8 @@ body {
 /* === Header === */
 .header {
   text-align: center;
-  padding: 60px 20px 30px;
+  padding-top: 60px;
+  padding-bottom: 30px;
   background-color: transparent;
 }
 
@@ -412,7 +413,7 @@ body {
 /* === Responsivitet === */
 @media (max-width: 768px) {
   body {
-    padding: 10px;
+    padding: 0px;
   }
 
   .button-row {
@@ -431,11 +432,11 @@ body {
 
   .hamburger {
     display: block; /* visa hamburger */
+    color: #405b50;
   }
 
   .header-picture img {
-    height: 50vh; /* mindre höjd på mobil */
-    object-position: center 20%; /* ändrar position om du vill */
+    width: 100%;
   }
 
   .information-text,
