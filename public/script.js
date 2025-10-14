@@ -1,20 +1,23 @@
-const thankModal = document.getElementById("thankModal");
-const closeModal = document.getElementById("closeModal");
+const heroImg = document.querySelector('.header-picture img');
+const hero = document.querySelector('.header-picture');
 
-function showThankModal(message) {
-  thankModal.querySelector("p").textContent =
-    message || "Tack för din inskickning!";
-  thankModal.style.display = "block";
-}
+const originalHeight = heroImg.offsetHeight;
 
-// Stäng modalen när man klickar på krysset
-closeModal.onclick = () => {
-  thankModal.style.display = "none";
-};
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const shrink = Math.max(originalHeight - scrollY, originalHeight * 0.5);
+  // 0.6 = minsta höjden (60 % av originalet)
 
-// Stäng modalen om man klickar utanför innehållet
-window.onclick = (event) => {
-  if (event.target === thankModal) {
-    thankModal.style.display = "none";
-  }
-};
+  heroImg.style.height = `${shrink}px`;
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM fully loaded and parsed");
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
+  
+  hamburger.addEventListener("click", () => {
+    console.log("Hamburger clicked");
+    navMenu.classList.toggle("active");
+  });
+});

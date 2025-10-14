@@ -15,7 +15,9 @@
     <div class="header">
       <h1>Anna & Joel</h1>
       <p>1 Augusti 2026</p>
-      <div class="button-row">
+      <div class="hamburger" id="hamburger">&#9776;</div>
+
+      <div class="button-row"id="navMenu">
         <a href="index.html" class="text-button">Information</a>
         <a href="ourStory.html" class="text-button">Vår story</a>
         <a href="gallery.html" class="text-button">Galleri</a>
@@ -83,7 +85,6 @@
 
           try {
             const response = await fetch("/api/gallery/upload", {
-              // ✅ rätt endpoint
               method: "POST",
               body: formData,
             });
@@ -113,5 +114,6 @@
       // ✅ ladda bilder direkt vid start
       loadGalleryImages();
     </script>
+    <script src="script.js"></script>
   </body>
 </html>

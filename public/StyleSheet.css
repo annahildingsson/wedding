@@ -22,37 +22,36 @@ body {
 .header h1 {
   font-family: "Dancing Script", cursive;
   font-size: 81px;
-  color: #5f6b61;
+  color: #405b50;
   margin-bottom: 10px;
 }
 
 .header p {
   font-size: 16px;
-  color: #7e8b7c;
+  color: #405b50;
 }
 
 .header-picture img {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 100vh; /* täcker hela skärmen */
   object-fit: cover;
-  object-position: center 40%; 
+  object-position: center 40%;
   display: block;
+  transition: transform 0.2s ease-out;
 }
 
 /* === Navigering === */
 .button-row {
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 10px;
 }
 
 .text-button {
   font-size: 16px;
   font-family: "Julius Sans One", sans-serif;
-  color: #4a4a4a;
+  color: #405b50;
   text-decoration: none;
   padding: 12px 24px;
   border: none;
@@ -62,15 +61,23 @@ body {
 }
 
 .text-button:hover {
-  background-color: #5f6b61;
+  background-color: #405b50;
   color: #fff;
 }
 
 .text-button.active {
-  background: #5f6b61;
+  background: #405b50;
   color: #fff;
   border-radius: 4px;
   padding: 12px 24px;
+}
+
+.hamburger {
+  display: none; /* syns bara på mobil */
+  font-size: 30px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  color: white;
 }
 
 /* === Sektioner === */
@@ -91,14 +98,14 @@ body {
 .information-text2 h2 {
   font-family: "Dancing Script", cursive;
   font-size: 40px;
-  color: #5f6b61;
+  color: #405b50;
   margin-bottom: 10px; /* lägg till detta */
 }
 
 .information-text p,
 .information-text2 p {
   font-size: 16px;
-  color: #4a4a4a;
+  color: black;
 }
 
 /* Bröllopsmiddag & fest (fullbredd) */
@@ -128,7 +135,7 @@ body {
 
 .firstMeeting,
 .secondMeeting {
-  background-color: #5f6b61;
+  background-color: #405b50;
   padding: 1.5rem 2rem;
   margin-bottom: 2.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -160,7 +167,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
   font-family: "Julius Sans One", sans-serif;
-  color: #5f6b61;
+  color: #405b50;
   text-align: center;
 }
 
@@ -168,31 +175,31 @@ body {
   font-family: "Dancing Script", cursive;
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: #5f6b61;
+  color: #405b50;
 }
 
 .uploadForm input[type="file"] {
   width: 100%;
   padding: 10px 12px;
   margin-bottom: 1.2rem;
-  border: 1.5px solid #7e8b7c;
+  border: 1.5px solid #405b50;
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
-  color: #5f6b61;
+  color: #405b50;
   background-color: #fffaf6;
   transition: border-color 0.3s ease;
 }
 
 .uploadForm input[type="file"]:focus {
-  border-color: #5f6b61;
+  border-color: #405b50;
   outline: none;
   box-shadow: 0 0 6px #7e8b7c;
 }
 
 .uploadForm button {
   width: 100%;
-  background-color: #7e8b7c;
+  background-color: #405b50;
   border: none;
   padding: 14px;
   font-family: "Dancing Script", cursive;
@@ -204,7 +211,7 @@ body {
 }
 
 .uploadForm button:hover {
-  background-color: #6d5d52;
+  background-color: #405b50;
 }
 
 /* === Bridalparty layout === */
@@ -221,7 +228,7 @@ body {
 .bridalparty h1 {
   font-family: "Dancing Script", cursive;
   font-size: 2.8rem;
-  color: #6d5d52;
+  color: #405b50;
   margin-bottom: 2rem;
 }
 
@@ -246,7 +253,7 @@ body {
 .person h2 {
   font-family: "Julius Sans One", sans-serif;
   font-size: 1.8rem;
-  color: #5f6b61;
+  color: #405b50;
   margin-bottom: 0.5rem;
 }
 
@@ -268,7 +275,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
   font-family: "Julius Sans One", sans-serif;
-  color: #5f6b61;
+  color: #405b50;
 }
 
 .rsvp h2 {
@@ -276,7 +283,7 @@ body {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   text-align: center;
-  color: #5f6b61;
+  color: #405b50;
 }
 
 .rsvp p {
@@ -287,7 +294,7 @@ body {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: #7e8b7c;
+  color: #405b50;
 }
 
 .rsvp input[type="text"],
@@ -296,11 +303,11 @@ body {
   width: 100%;
   padding: 10px 12px;
   margin-bottom: 1.2rem;
-  border: 1.5px solid #7e8b7c;
+  border: 1.5px solid #405b50;
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
-  color: #5f6b61;
+  color: #405b50;
   background-color: #fffaf6;
   transition: border-color 0.3s ease;
 }
@@ -308,9 +315,9 @@ body {
 .rsvp input[type="text"]:focus,
 .rsvp input[type="number"]:focus,
 .rsvp textarea:focus {
-  border-color: #5f6b61;
+  border-color: #405b50;
   outline: none;
-  box-shadow: 0 0 6px #7e8b7c;
+  box-shadow: 0 0 6px #405b50;
 }
 
 .rsvp textarea {
@@ -322,11 +329,11 @@ body {
   width: 100%;
   padding: 10px 12px;
   margin-bottom: 1.2rem;
-  border: 1.5px solid #7e8b7c;
+  border: 1.5px solid #405b50;
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
-  color: #5f6b61;
+  color: #405b50;
   background-color: #fffaf6;
   transition: border-color 0.3s ease;
   -webkit-appearance: none; /* ta bort default pilar i vissa webbläsare */
@@ -336,33 +343,34 @@ body {
 }
 
 .rsvp select:focus {
-  border-color: #5f6b61;
+  border-color: #405b50;
   outline: none;
-  box-shadow: 0 0 6px #7e8b7c;
+  box-shadow: 0 0 6px #405b50;
 }
 
 .rsvp button {
   width: 100%;
-  background-color: #7e8b7c;
+  background-color: #e6e3db;
   border: none;
   padding: 14px;
   font-family: "Dancing Script", cursive;
   font-size: 1.5rem;
-  color: #fff;
+  color: #405b50;
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .rsvp button:hover {
-  background-color: #6d5d52;
+  color: #e6e3db;
+  background-color: #405b50;
 }
 
 #osa-message {
   margin-top: 1rem;
   text-align: center;
   font-weight: 600;
-  color: #6d5d52;
+  color: #405b50;
 }
 
 .modal {
@@ -386,11 +394,11 @@ body {
   max-width: 400px;
   text-align: center;
   font-family: "Julius Sans One", sans-serif;
-  color: #5f6b61;
+  color: #405b50;
 }
 
 .close {
-  color: #5f6b61;
+  color: #405b50;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -398,13 +406,36 @@ body {
 }
 
 .close:hover {
-  color: #7e8b7c;
+  color: #405b50;
 }
 
 /* === Responsivitet === */
 @media (max-width: 768px) {
   body {
     padding: 10px;
+  }
+
+  .button-row {
+    display: none; /* göm initialt */
+    flex-direction: column; /* vertikal layout */
+    top: 80px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 1000;
+  }
+
+  .button-row.active {
+    display: flex; /* visa när active */
+  }
+
+  .hamburger {
+    display: block; /* visa hamburger */
+  }
+
+  .header-picture img {
+    height: 50vh; /* mindre höjd på mobil */
+    object-position: center 20%; /* ändrar position om du vill */
   }
 
   .information-text,
@@ -432,21 +463,6 @@ body {
     font-size: 16px;
   }
 
-  .button-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-    margin-top: 10px;
-  }
-
-  .text-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    width: 80%;
-    text-align: center;
-  }
-
   .information {
     display: flex;
     flex-direction: column;
@@ -471,37 +487,11 @@ body {
     text-align: center;
   }
 
-  .map iframe {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-  }
-
   img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 10px auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .slideshow-container {
-    height: 300px;
-  }
-
-  .mySlides img {
-    height: 300px;
-  }
-}
-
-@media (max-width: 480px) {
-  .slideshow-container {
-    height: 150px;
-  }
-
-  .mySlides img {
-    height: 150px;
   }
 }
 
@@ -517,5 +507,9 @@ body {
 
   .rsvp button {
     font-size: 1.3rem;
+  }
+  .header-picture img {
+    height: 30vh; /* ännu mindre höjd på små skärmar */
+    object-position: center 10%;
   }
 }
