@@ -48,6 +48,7 @@ body {
   justify-content: center;
   gap: 15px;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .text-button {
@@ -76,10 +77,9 @@ body {
 
 .hamburger {
   display: none; /* syns bara på mobil */
-  font-size: 30px;
+  font-size: 12px;
   cursor: pointer;
   margin-bottom: 10px;
-  color: white;
 }
 
 /* === Sektioner === */
@@ -90,33 +90,44 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
   gap: 30px;
   font-family: "Playfair", serif;
 }
 
 /* Bild och text till vänster/höger */
-.information-text h2,
-.information-text2 h2 {
+.information-text h2 {
   font-family: "Dancing Script", cursive;
   font-size: 40px;
   color: #405b50;
   margin-bottom: 10px; /* lägg till detta */
+  text-align: center;
+  align-items: center;
 }
-
-.information-text p,
-.information-text2 p {
+.information-text img {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+  margin-bottom: 4rem;
+}
+.information-text p {
+  text-align: center;
   font-size: 16px;
   color: black;
 }
 
-/* Bröllopsmiddag & fest (fullbredd) */
-.information-text2 {
-  width: 100%;
-  margin-top: 20px;
-  padding-top: 10px;
+.mainInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
-
+.mainInfo-part {
+  padding: 1.5rem;
+  width: 400px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 /* Our story layout */
 .ourStory {
   max-width: 1000px;
@@ -128,11 +139,12 @@ body {
   font-family: "Dancing Script", cursive;
   color: #e6e3db;
   font-size: 35px;
+  text-align: center;
 }
 
 .ourStory p {
-  font-family: "Julius Sans One", sans-serif;
   color: #e6e3db;
+  font-size: 16px;
 }
 
 .firstMeeting,
@@ -141,6 +153,7 @@ body {
   padding: 1.5rem 2rem;
   margin-bottom: 2.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: "Playfair", serif;
 }
 
 /* === Gallery layout === */
@@ -221,9 +234,6 @@ body {
   max-width: 900px;
   margin: 3rem auto;
   padding: 1rem;
-  background-color: #fffaf6;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 
@@ -231,7 +241,6 @@ body {
   font-family: "Dancing Script", cursive;
   font-size: 2.8rem;
   color: #405b50;
-  margin-bottom: 2rem;
 }
 
 .brudtärnor,
@@ -243,28 +252,46 @@ body {
   gap: 2rem;
 }
 
+.bridalparty li {
+  color: #e6e3db;
+  list-style: none;
+}
+
+.bridalparty a {
+  text-decoration: none;
+  color: #e6e3db;
+  font-size: 12px;
+}
 .person {
-  background-color: #fffaf6;
-  border: 2px solid #f8f2e4;
+  background-color: #405b50;
   padding: 1.5rem;
-  border-radius: 10px;
-  width: 300px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  width: 400px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .person h2 {
-  font-family: "Julius Sans One", sans-serif;
-  font-size: 1.8rem;
-  color: #405b50;
+  font-family: "Dancing script", sans-serif;
+  font-size: 2.8rem;
+  color: #e6e3db;
   margin-bottom: 0.5rem;
 }
 
 .person p {
   font-family: "Delius", sans-serif;
   font-size: 1rem;
-  color: #444;
+  color: #e6e3db;
 }
 
+.person img {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 3px;
+}
 /* === Rsvp layout === */
 
 /* === RSVP Formulär === */
