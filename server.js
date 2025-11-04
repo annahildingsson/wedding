@@ -86,30 +86,32 @@ app.post("/api/rsvp", async (req, res) => {
     return res.status(400).json({ message: "Namn och OSA krävs" });
 
   try {
+    // Hämta hela gästlistan (kolumn A)
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: SPREADSHEET_ID,
       range: `${SHEET_NAME_RSVP}!A:C`,
     });
     const rows = response.data.values || [];
-    const nameIndex = rows.findIndex(
-      (row) => row[0]?.toLowerCase() === namn.toLowerCase()
-    );
 
-    if (nameIndex !== -1) {
-      await sheets.spreadsheets.values.update({
-        spreadsheetId: SPREADSHEET_ID,
-        range: `${SHEET_NAME_RSVP}!A${nameIndex + 1}:C${nameIndex + 1}`,
-        valueInputOption: "USER_ENTERED",
-        requestBody: { values: [[namn, rsvp, specialkost || ""]] },
-      });
-    } else {
-      await sheets.spreadsheets.values.append({
-        spreadsheetId: SPREADSHEET_ID,
-        range: `${SHEET_NAME_RSVP}!A:C`,
-        valueInputOption: "USER_ENTERED",
-        requestBody: { values: [[namn, rsvp, specialkost || ""]] },
+    // Kontrollera om namnet finns i listan
+    const guestNames = rows.map((r) => r[0]?.toLowerCase().trim());
+    const existingIndex = guestNames.indexOf(namn.toLowerCase().trim());
+
+    if (existingIndex === -1) {
+      return res.status(403).json({
+        message:
+          "Namnet finns inte på gästlistan. Kontakta Anna & Joel om du tror det är fel.",
       });
     }
+
+    // Uppdatera gästens rad (rsvp och specialkost)
+    await sheets.spreadsheets.values.update({
+      spreadsheetId: SPREADSHEET_ID,
+      range: `${SHEET_NAME_RSVP}!A${existingIndex + 1}:C${existingIndex + 1}`,
+      valueInputOption: "USER_ENTERED",
+      requestBody: { values: [[namn, rsvp, specialkost || ""]] },
+    });
+
     res.json({ message: "OSA sparad – tack!" });
   } catch (err) {
     console.error(err);
