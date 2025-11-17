@@ -109,6 +109,7 @@ body {
   display: block;
   margin: 0 auto 10px;
   margin-bottom: 4rem;
+  object-fit: cover;
 }
 .information-text p {
   text-align: center;
@@ -467,16 +468,14 @@ body {
     width: 100%;
   }
 
-  .information-text,
-  .information-text2 {
+  .information-text {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  .information-text img,
-  .information-text2 img {
+  .information-text img {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
@@ -498,20 +497,17 @@ body {
     align-items: center;
   }
 
-  .information-text,
-  .information-text2 {
+  .information-text {
     width: 100%;
     padding: 10px;
   }
 
-  .information-text h2,
-  .information-text2 h2 {
+  .information-text h2 {
     font-size: 28px;
     text-align: center;
   }
 
-  .information-text p,
-  .information-text2 p {
+  .information-text p {
     font-size: 16px;
     text-align: center;
   }
