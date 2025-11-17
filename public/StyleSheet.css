@@ -66,6 +66,8 @@ body {
 .text-button:hover {
   background-color: #405b50;
   color: #fff;
+  border-radius: 12px;
+
 }
 
 .text-button.active {
@@ -155,6 +157,8 @@ body {
   margin-bottom: 2.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   font-family: "Playfair", serif;
+  border-radius: 12px;
+
 }
 
 /* === Gallery layout === */
@@ -192,6 +196,10 @@ body {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   color: #405b50;
+}
+
+.uploadForm p{
+  margin-bottom: 1.5rem;
 }
 
 .uploadForm input[type="file"] {
