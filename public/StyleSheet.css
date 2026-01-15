@@ -125,10 +125,10 @@ body {
   gap: 2rem;
 }
 .mainInfo-part {
-  padding: 1.5rem;
+  padding: 1rem;
   width: 400px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 /* Our story layout */
 .ourStory {
@@ -462,6 +462,7 @@ footer a {
   color: #e6e3db;
   text-decoration: none;
 }
+
 /* === Responsivitet === */
 @media (max-width: 768px) {
   body {
