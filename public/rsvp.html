@@ -13,7 +13,7 @@
   </head>
   <body>
     <div class="header">
-      <h1>Anna & Joel</h1>
+      <h1>Joel & Anna</h1>
       <p>1 Augusti 2026</p>
       <div class="hamburger" id="hamburger">&#9776; Meny</div>
 
@@ -39,12 +39,15 @@
         Är ni flera i familjen eller sällskapet, fyll i en OSA per person i
         inbjudan för att hjälpa oss med planeringen.
       </p>
-      <p>Om du har några allergier, vänligen skriv det i kommentarsfältet.</p>
+      <p>
+        Om du har några allergier eller matpreferenser, vänligen skriv det i
+        kommentarsfältet.
+      </p>
       <form id="osa-form">
         <label for="namn">Fullständigt namn:</label>
         <input type="text" id="namn" name="namn" required />
 
-        <label for="status">Status:</label>
+        <label for="status">Kommer / kommer inte:</label>
         <select id="status" name="status" required>
           <option value="" disabled selected>Välj ett alternativ</option>
           <option value="Kommer">Kommer</option>
@@ -80,7 +83,6 @@
       const closeBtn = document.getElementById("closeModal");
 
       function showThankModal(message) {
-        // Om du vill kan du ändra meddelandet dynamiskt:
         const p = modal.querySelector("p");
         p.textContent = message || "Tack! Din OSA har skickats.";
 
@@ -122,7 +124,9 @@
             form.reset();
           })
           .catch((error) => {
-            showThankModal("Något gick fel, försök igen.");
+            showThankModal(
+              "Något gick fel, försök igen eller kontakta Anna eller Joel via SMS."
+            );
             console.error(error);
           });
       });
