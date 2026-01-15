@@ -157,7 +157,6 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   font-family: "Playfair", serif;
   border-radius: 12px;
-
 }
 
 /* === Gallery layout === */
@@ -197,7 +196,7 @@ body {
   color: #405b50;
 }
 
-.uploadForm p{
+.uploadForm p {
   margin-bottom: 1.5rem;
 }
 
@@ -486,6 +485,7 @@ footer a {
   .hamburger {
     display: block; /* visa hamburger */
     color: #405b50;
+    font-size: 18px;
   }
 
   .header-picture img {
