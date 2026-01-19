@@ -39,6 +39,7 @@ const SPREADSHEET_ID = "1Q4jz6KWrQ3mYS_XTq4wdTROKFM2vnQr63somTaR6VdA";
 const SHEET_NAME_RSVP = "Gästlista";
 
 // === Routes ===
+/*
 app.get("/", (req, res) =>
   res.sendFile(path.join(__dirname, "public", "index.html"))
 );
@@ -48,6 +49,15 @@ app.get("/gallery", (req, res) =>
 app.get("/rsvp", (req, res) =>
   res.sendFile(path.join(__dirname, "public", "rsvp.html"))
 );
+*/
+
+// Clean URLs
+app.get("/", (req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
+app.get("/ourStory", (req, res) => res.sendFile(path.join(__dirname, "public", "ourStory.html")));
+app.get("/gallery", (req, res) => res.sendFile(path.join(__dirname, "public", "gallery.html")));
+app.get("/bridalparty", (req, res) => res.sendFile(path.join(__dirname, "public", "bridalparty.html")));
+app.get("/rsvp", (req, res) => res.sendFile(path.join(__dirname, "public", "rsvp.html")));
+
 
 // === API: Galleri ===
 // Ladda upp en bild
