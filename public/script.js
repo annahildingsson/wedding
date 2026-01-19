@@ -14,7 +14,6 @@ window.addEventListener("scroll", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded and parsed");
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("navMenu");
 

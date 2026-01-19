@@ -18,6 +18,8 @@ body {
   padding-top: 60px;
   padding-bottom: 30px;
   background-color: transparent;
+  text-decoration: none; 
+
 }
 
 .header h1 {
@@ -26,6 +28,11 @@ body {
   font-size: 81px;
   color: #405b50;
   margin-bottom: 10px;
+}
+
+.header a h1 {
+  text-decoration: none; 
+  cursor: pointer; 
 }
 
 .header p {
