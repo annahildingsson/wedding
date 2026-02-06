@@ -57,6 +57,7 @@ app.get("/ourStory", (req, res) => res.sendFile(path.join(__dirname, "public", "
 app.get("/gallery", (req, res) => res.sendFile(path.join(__dirname, "public", "gallery.html")));
 app.get("/bridalparty", (req, res) => res.sendFile(path.join(__dirname, "public", "bridalparty.html")));
 app.get("/rsvp", (req, res) => res.sendFile(path.join(__dirname, "public", "rsvp.html")));
+app.get("/internationalguest", (req, res) => res.sendFile(path.join(__dirname, "public", "internationalguest.html")));
 
 
 // === API: Galleri ===
